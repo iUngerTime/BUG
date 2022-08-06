@@ -1,4 +1,4 @@
-package com.example.bug_app
+package com.bugsoftware.bug
 
 import io.flutter.embedding.android.FlutterActivity
 
