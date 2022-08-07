@@ -1,6 +1,8 @@
 {
-  "appTitle": "bug_app",
+  "appTitle": "Brenton Unger II",
   "@appTitle": {
     "description": "The title of the application"
-  }
+  },
+  "homeTabTitle": "Home",
+  "resumeTabTitle": "Resume"
 }
