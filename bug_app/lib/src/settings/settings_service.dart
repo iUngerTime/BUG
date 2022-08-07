@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,7 +11,6 @@ class SettingsService {
 
   /// Loads the User's preferred ThemeMode from local or remote storage.
   Future<ThemeMode> themeMode() async {
-    log("This hit");
     // Grab it from local storage
     final prefs = await SharedPreferences.getInstance();
     final theme = prefs.getInt('theme') ?? systemTheme;

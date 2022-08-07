@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: Text(AppLocalizations.of(context)!.homeTabTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -50,6 +50,19 @@ class HomeView extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
+            ),
+            const AboutListTile(
+              // <-- SEE HERE
+              icon: Icon(
+                Icons.info,
+              ),
+              applicationIcon: Icon(
+                Icons.local_play,
+              ),
+              applicationName: 'BUG - Brenton Unger II',
+              applicationVersion: '1.1',
+              applicationLegalese: '© 2022 BUG Software',
+              child: Text('About app'),
             ),
           ],
         ),
