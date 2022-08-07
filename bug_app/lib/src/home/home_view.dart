@@ -1,12 +1,14 @@
+import 'package:bug_app/src/theme/theme_service.dart';
 import 'package:flutter/material.dart';
 
-import '../settings/settings_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key, required this.themeService}) : super(key: key);
 
-  static const routeName = '/home';
+  static const routeName = '/';
+
+  final ThemeService themeService;
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +17,14 @@ class HomeView extends StatelessWidget {
         title: Text(AppLocalizations.of(context)!.homeTabTitle),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              // Navigate to the settings page. If the user leaves and returns
-              // to the app after it has been killed while running in the
-              // background, the navigation stack is restored.
-              Navigator.restorablePushNamed(context, SettingsView.routeName);
-            },
-          ),
+              onPressed: () {
+                themeService.isDark
+                    ? themeService.updateThemeMode(ThemeMode.light)
+                    : themeService.updateThemeMode(ThemeMode.dark);
+              },
+              icon: Icon(themeService.isDark
+                  ? Icons.nightlight_round
+                  : Icons.wb_sunny)),
         ],
       ),
       drawer: Drawer(
@@ -36,9 +38,7 @@ class HomeView extends StatelessWidget {
               child: Image.asset('assets/images/flutter_logo.png'),
             ),
             ListTile(
-              leading: const Icon(
-                Icons.home,
-              ),
+              leading: const Icon(Icons.home),
               title: Text(AppLocalizations.of(context)!.homeTabTitle),
               onTap: () {
                 Navigator.pop(context);
@@ -53,12 +53,8 @@ class HomeView extends StatelessWidget {
             ),
             const AboutListTile(
               // <-- SEE HERE
-              icon: Icon(
-                Icons.info,
-              ),
-              applicationIcon: Icon(
-                Icons.local_play,
-              ),
+              icon: Icon(Icons.info),
+              applicationIcon: Icon(Icons.local_play),
               applicationName: 'BUG - Brenton Unger II',
               applicationVersion: '1.1',
               applicationLegalese: '© 2022 BUG Software',
