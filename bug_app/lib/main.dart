@@ -4,6 +4,8 @@ import 'src/app.dart';
 import 'src/theme/theme_service.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
   final themeController = ThemeService();
