@@ -1,32 +1,30 @@
-import 'package:bug/core/theme/color_schemes.dart';
+import 'package:bug/core/theme/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({Key? key}) : super(key: key);
-
-  final themebit = Get.isDarkMode.obs;
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Instaniate the theme service
+    final ThemeService themeService = Get.put(ThemeService());
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BUG'),
+        title: Text(
+          'BUG',
+          style: Theme.of(context).textTheme.headline4,
+        ),
         actions: [
           IconButton(
-              onPressed: () {
-                Get.changeTheme(Get.isDarkMode
-                    ? ThemeData(
-                        useMaterial3: true,
-                        colorScheme: lightColorScheme,
-                      )
-                    : ThemeData(
-                        useMaterial3: true,
-                        colorScheme: darkColorScheme,
-                      ));
-              },
-              icon: Icon(
-                  themebit.value ? Icons.nightlight_round : Icons.wb_sunny)),
+            icon:
+                Icon(Get.isDarkMode ? Icons.nightlight_round : Icons.wb_sunny),
+            onPressed: () {
+              themeService.updateThemeMode(
+                  Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+            },
+          ),
         ],
       ),
       drawer: Drawer(
@@ -34,8 +32,8 @@ class HomeScreen extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Colors.blue,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
               child: Image.asset('assets/images/flutter_logo.png'),
             ),
@@ -65,6 +63,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      body: Center(child: Text('Hello')),
     );
   }
 }
