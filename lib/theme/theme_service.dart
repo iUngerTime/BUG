@@ -1,12 +1,29 @@
-import 'package:BUG/theme/theme_preferences.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeService with ChangeNotifier {
-  final ThemePreferences _themePrefs = ThemePreferences();
   late ThemeMode _themeMode;
+
+  static const themePrefKey = 'theme_pref_key';
+  static const darkTheme = 1;
+  static const lightTheme = 2;
 
   ThemeMode get themeMode => _themeMode;
   bool get isDark => _themeMode == ThemeMode.dark;
+
+  setTheme(ThemeMode newTheme) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
+    var themeInt = (newTheme == ThemeMode.light ? lightTheme : darkTheme);
+    sharedPreferences.setInt(themePrefKey, themeInt);
+  }
+
+  Future<ThemeMode> _getTheme() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    var themeInt = sharedPreferences.getInt(themePrefKey) ?? lightTheme;
+
+    return (themeInt == lightTheme ? ThemeMode.light : ThemeMode.dark);
+  }
 
   /// Load the user's settings from the SettingsService. It may load from a
   /// local database or the internet. The controller only knows it can load the
