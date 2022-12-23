@@ -28,34 +28,47 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+        child: Column(
           children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    child: Image.asset('assets/images/flutter_logo.png'),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.home),
+                    title: const Text('Home'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.contact_page_rounded),
+                    title: const Text('Resume'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.phone),
+                    title: const Text('Contact'),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ],
               ),
-              child: Image.asset('assets/images/flutter_logo.png'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.contact_page_rounded),
-              title: const Text('Resume'),
-              onTap: () {
-                Navigator.pop(context);
-              },
             ),
             const AboutListTile(
               // <-- SEE HERE
               icon: Icon(Icons.info),
               applicationIcon: Icon(Icons.local_play),
-              applicationName: 'BUG - Brenton Unger II',
+              applicationName: 'BUG',
               applicationVersion: '1.1',
               applicationLegalese: '© 2022 BUG Software',
               child: Text('About app'),

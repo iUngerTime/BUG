@@ -9,7 +9,7 @@ void main() async {
 
   // Load the theme from persistent storage
   final ThemeService themeService = Get.put(ThemeService());
-  themeService.loadSettings();
+  await themeService.loadSettings();
 
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
