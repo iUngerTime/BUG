@@ -1,9 +1,9 @@
-import 'package:BUG/src/resume/data/resume_repository.dart';
-import 'package:BUG/src/resume/domain/education_details.dart';
-import 'package:BUG/src/resume/domain/personal_details.dart';
-import 'package:BUG/src/resume/domain/resume.dart';
-import 'package:BUG/src/resume/domain/skills_category.dart';
-import 'package:BUG/src/resume/domain/work_details.dart';
+import 'package:BUG/models/personal_details.dart';
+import 'package:BUG/services/resume_repository.dart';
+import 'package:BUG/models/education_details.dart';
+import 'package:BUG/models/resume.dart';
+import 'package:BUG/models/skills_category.dart';
+import 'package:BUG/models/work_details.dart';
 
 class OfflineResume implements ResumeRepository {
   @override

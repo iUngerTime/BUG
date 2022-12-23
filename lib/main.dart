@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'src/app.dart';
-import 'src/theme/theme_service.dart';
+import 'app.dart';
+import 'theme/theme_service.dart';
 
 void main() async {
+  // Ensure the intialized service
   WidgetsFlutterBinding.ensureInitialized();
 
   // Set up the SettingsController, which will glue user settings to multiple

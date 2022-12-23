@@ -1,4 +1,4 @@
-import 'package:BUG/src/theme/theme_preferences.dart';
+import 'package:BUG/theme/theme_preferences.dart';
 import 'package:flutter/material.dart';
 
 class ThemeService with ChangeNotifier {
