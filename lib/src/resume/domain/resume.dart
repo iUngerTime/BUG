@@ -1,7 +1,7 @@
-import 'package:bug_app/src/resume/domain/education_details.dart';
-import 'package:bug_app/src/resume/domain/personal_details.dart';
-import 'package:bug_app/src/resume/domain/skills_category.dart';
-import 'package:bug_app/src/resume/domain/work_details.dart';
+import 'package:BUG/src/resume/domain/education_details.dart';
+import 'package:BUG/src/resume/domain/personal_details.dart';
+import 'package:BUG/src/resume/domain/skills_category.dart';
+import 'package:BUG/src/resume/domain/work_details.dart';
 
 class Resume {
   final PersonalDetails personalInfo;

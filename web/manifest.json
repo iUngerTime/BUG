@@ -1,6 +1,6 @@
 {
-    "name": "bug_app",
-    "short_name": "bug_app",
+    "name": "BUG",
+    "short_name": "BUG",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

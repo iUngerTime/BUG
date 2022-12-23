@@ -1,4 +1,4 @@
-import 'package:bug_app/src/resume/domain/resume.dart';
+import 'package:BUG/src/resume/domain/resume.dart';
 
 abstract class ResumeRepository {
   Future<Resume> getResume();

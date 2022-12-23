@@ -1,4 +1,4 @@
-# bug_app
+# BUG
 
 A new Flutter project.
 

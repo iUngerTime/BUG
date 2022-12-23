@@ -1,4 +1,4 @@
-name: bug_app
+name: BUG
 description: A new Flutter project.
 
 # Prevent accidental publishing to pub.dev.
@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  go_router: ^6.0.0
   intl: ^0.17.0
   shared_preferences: ^2.0.15
 
