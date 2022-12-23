@@ -1,9 +1,11 @@
-import 'package:BUG/core/theme/color_schemes.dart';
+import 'package:bug/core/theme/color_schemes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final themebit = Get.isDarkMode.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                       ));
               },
               icon: Icon(
-                  Get.isDarkMode ? Icons.nightlight_round : Icons.wb_sunny)),
+                  themebit.value ? Icons.nightlight_round : Icons.wb_sunny)),
         ],
       ),
       drawer: Drawer(

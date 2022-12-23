@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bugsoftware.bug">
    <application
-        android:label="BUG"
+        android:label="bug"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -1,7 +1,7 @@
-import 'package:BUG/app/data/models/personal_details.dart';
-import 'package:BUG/app/data/models/education_details.dart';
-import 'package:BUG/app/data/models/skills_category.dart';
-import 'package:BUG/app/data/models/work_details.dart';
+import 'package:bug/app/data/models/personal_details.dart';
+import 'package:bug/app/data/models/education_details.dart';
+import 'package:bug/app/data/models/skills_category.dart';
+import 'package:bug/app/data/models/work_details.dart';
 
 class Resume {
   final PersonalDetails personalInfo;

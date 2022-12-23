@@ -1,4 +1,4 @@
-import 'package:BUG/app/modules/home/home_screen.dart';
+import 'package:bug/app/modules/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,7 +10,7 @@ void main() async {
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
   runApp(GetMaterialApp(
-    home: const HomeScreen(),
+    home: HomeScreen(),
     locale: Get.deviceLocale,
   ));
 }
