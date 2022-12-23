@@ -1,30 +1,30 @@
-import 'package:BUG/theme/theme_service.dart';
+import 'package:BUG/core/theme/color_schemes.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key, required this.themeService}) : super(key: key);
-
-  static const routeName = '/';
-
-  final ThemeService themeService;
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.homeTabTitle),
+        title: const Text('BUG'),
         actions: [
           IconButton(
               onPressed: () {
-                themeService.isDark
-                    ? themeService.updateThemeMode(ThemeMode.light)
-                    : themeService.updateThemeMode(ThemeMode.dark);
+                Get.changeTheme(Get.isDarkMode
+                    ? ThemeData(
+                        useMaterial3: true,
+                        colorScheme: lightColorScheme,
+                      )
+                    : ThemeData(
+                        useMaterial3: true,
+                        colorScheme: darkColorScheme,
+                      ));
               },
-              icon: Icon(themeService.isDark
-                  ? Icons.nightlight_round
-                  : Icons.wb_sunny)),
+              icon: Icon(
+                  Get.isDarkMode ? Icons.nightlight_round : Icons.wb_sunny)),
         ],
       ),
       drawer: Drawer(
@@ -39,14 +39,14 @@ class HomeScreen extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.home),
-              title: Text(AppLocalizations.of(context)!.homeTabTitle),
+              title: const Text('Home'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
               leading: const Icon(Icons.contact_page_rounded),
-              title: Text(AppLocalizations.of(context)!.resumeTabTitle),
+              title: const Text('Resume'),
               onTap: () {
                 Navigator.pop(context);
               },

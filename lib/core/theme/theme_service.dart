@@ -11,7 +11,7 @@ class ThemeService with ChangeNotifier {
   ThemeMode get themeMode => _themeMode;
   bool get isDark => _themeMode == ThemeMode.dark;
 
-  setTheme(ThemeMode newTheme) async {
+  _setTheme(ThemeMode newTheme) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
     var themeInt = (newTheme == ThemeMode.light ? lightTheme : darkTheme);
@@ -29,7 +29,7 @@ class ThemeService with ChangeNotifier {
   /// local database or the internet. The controller only knows it can load the
   /// settings from the service.
   Future<void> loadSettings() async {
-    _themeMode = await _themePrefs.getTheme();
+    _themeMode = await _getTheme();
 
     // Important! Inform listeners a change has occurred.
     notifyListeners();
@@ -49,6 +49,6 @@ class ThemeService with ChangeNotifier {
     notifyListeners();
 
     // Persist the changes to local storage
-    _themePrefs.setTheme(newThemeMode);
+    _setTheme(newThemeMode);
   }
 }
