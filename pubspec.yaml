@@ -15,8 +15,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   get:
+  get_storage:
   json_theme: ^4.0.3+2
-  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -33,4 +33,3 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
-    - assets/themes/

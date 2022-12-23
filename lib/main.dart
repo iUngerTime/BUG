@@ -7,15 +7,18 @@ void main() async {
   // Ensure the intialized service
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Load the theme from persistent storage
-  final ThemeService themeService = Get.put(ThemeService());
-  await themeService.loadSettings();
+  // Load the theme
+  final themeController = Get.put(ThemeController());
 
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
   runApp(GetMaterialApp(
-    home: const HomeScreen(),
+    theme: ThemeData.light(),
+    darkTheme: ThemeData.dark(),
+    themeMode: themeController.theme,
+    home: HomeScreen(),
+    title: 'BUG',
     locale: Get.deviceLocale,
   ));
 }

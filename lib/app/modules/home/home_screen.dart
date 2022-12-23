@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final themeController = Get.find<ThemeController>();
 
   @override
   Widget build(BuildContext context) {
-    // Instaniate the theme service
-    final ThemeService themeService = Get.put(ThemeService());
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -21,8 +20,9 @@ class HomeScreen extends StatelessWidget {
             icon:
                 Icon(Get.isDarkMode ? Icons.nightlight_round : Icons.wb_sunny),
             onPressed: () {
-              themeService.updateThemeMode(
-                  Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+              Get.isDarkMode
+                  ? themeController.loadLightTheme()
+                  : themeController.loadDarkTheme();
             },
           ),
         ],
