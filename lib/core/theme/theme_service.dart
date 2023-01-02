@@ -1,3 +1,4 @@
+import 'package:bug/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -15,12 +16,12 @@ class ThemeController extends GetxController {
   void _saveTheme(bool isDarkMode) => _box.write(_key, isDarkMode);
 
   void loadLightTheme() {
-    Get.changeTheme(ThemeData.light());
+    Get.changeTheme(AppTheme.light);
     _saveTheme(false);
   }
 
   void loadDarkTheme() {
-    Get.changeTheme(ThemeData.dark());
+    Get.changeTheme(AppTheme.dark);
     _saveTheme(true);
   }
 }
