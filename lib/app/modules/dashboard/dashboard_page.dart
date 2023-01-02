@@ -63,8 +63,8 @@ class DashboardPage extends StatelessWidget {
           children: const [
             HomeScreen(),
             WorkScreen(),
-            EducationScreen(),
             ProjectsScreen(),
+            EducationScreen(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
