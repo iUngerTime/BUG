@@ -16,6 +16,19 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(builder: (controller) {
       return Scaffold(
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: Icon(
+                  Get.isDarkMode ? Icons.nightlight_round : Icons.wb_sunny),
+              onPressed: () {
+                Get.isDarkMode
+                    ? themeController.loadLightTheme()
+                    : themeController.loadDarkTheme();
+              },
+            ),
+          ],
+        ),
         drawer: Drawer(
           child: Column(
             children: [
@@ -27,7 +40,7 @@ class DashboardPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.primary,
                       ),
-                      child: Image.asset('assets/images/flutter_logo.png'),
+                      child: Image.asset('assets/images/LogoWithGradient.png'),
                     ),
                     ListTile(
                       leading: const Icon(Icons.phone),
