@@ -1,4 +1,3 @@
-import 'package:bug/app/modules/dashboard/dashboard_page.dart';
 import 'package:bug/core/theme/app_theme.dart';
 import 'package:bug/routes/pages.dart';
 import 'package:bug/routes/routes.dart';
@@ -19,6 +18,8 @@ void main() async {
   runApp(GetMaterialApp(
     initialRoute: AppRoutes.dashboard,
     getPages: AppPages.list,
+    theme: AppTheme.light,
+    darkTheme: AppTheme.dark,
     themeMode: themeController.theme,
     title: 'BUG',
     locale: Get.deviceLocale,
