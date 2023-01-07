@@ -44,15 +44,23 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Born and raise in Texas, my family moved to Washington at age 11. I cannot be classified into a single stereotype. Simultaneously I am a geek, engineer, athlete, carpenter, musician, snowboarder, rock-climber, reader, and more!',
+                    'Born and raised in Texas, my family moved to Washington at age 11. I cannot be classified into a single stereotype. Simultaneously I am a geek, engineer, athlete, carpenter, musician, snowboarder, rock-climber, reader, and more!',
                     style: Theme.of(context).textTheme.bodyLarge,
-                    textAlign: TextAlign.center,
+                    textAlign: TextAlign.left,
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Both professionally and personally I constantly aim to grow and be better. This is reflected by how I spend my time. Wisdom is understanding when your knowledge is insufficient, gone through a process of retrospection on past experiences, and applied the lessons. I aim to try everything, fail, and then learn from those failures.',
+                    'Growth: spiritually, professionally, and personally is my highest priority.Wisdom is understanding when your knowledge is insufficient, gone through a process of retrospection on past experiences, and applied the lessons available to be learned. I aim to try everything, fail, and then learn from those failures.',
                     style: Theme.of(context).textTheme.bodyLarge,
-                    textAlign: TextAlign.center,
+                    textAlign: TextAlign.left,
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'I have a vision for my life, something I want to achieve. Life is always taking you somewhere, and if you aren'
+                    't going somewhere with purpose, then it doesn'
+                    't matter what vehicle you drive and anywhere is good. I will serve as many people in this life as I can. The world will forget my name, but God willing, will never forget the impact I leave.',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                    textAlign: TextAlign.left,
                   ),
                   const SizedBox(height: 16),
                   Column(
