@@ -1,8 +1,8 @@
 import 'package:bug/app/modules/dashboard/dashboard_controller.dart';
-import 'package:bug/app/modules/education/education_screen.dart';
-import 'package:bug/app/modules/home/home_screen.dart';
-import 'package:bug/app/modules/projects/projects_screen.dart';
-import 'package:bug/app/modules/work/work_screen.dart';
+import 'package:bug/app/modules/dashboard/skills/skills_screen.dart';
+import 'package:bug/app/modules/dashboard/home/home_screen.dart';
+import 'package:bug/app/modules/dashboard/projects/projects_screen.dart';
+import 'package:bug/app/modules/dashboard/work/work_screen.dart';
 import 'package:bug/core/theme/theme_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -77,7 +77,7 @@ class DashboardPage extends StatelessWidget {
             HomeScreen(),
             WorkScreen(),
             ProjectsScreen(),
-            EducationScreen(),
+            SkillsScreen(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -105,7 +105,7 @@ class DashboardPage extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.school_rounded),
-              label: "Education",
+              label: "Skills",
             ),
           ],
         ),
